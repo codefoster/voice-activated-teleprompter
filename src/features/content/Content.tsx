@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef } from "react"
 import { escape } from "html-escaper"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setContent, setFinalTranscriptIndex, setInterimTranscriptIndex } from "./contentSlice"
+import { appConfig } from "../../config"
 
 import {
   selectStatus,
@@ -9,8 +10,6 @@ import {
   selectVerticallyFlipped,
   selectFontSize,
   selectMargin,
-  selectOpacity,
-  selectScrollOffset,
   toggleEdit,
 } from "../navbar/navbarSlice"
 
@@ -29,8 +28,8 @@ export const Content = () => {
   const status = useAppSelector(selectStatus)
   const fontSize = useAppSelector(selectFontSize)
   const margin = useAppSelector(selectMargin)
-  const opacity = useAppSelector(selectOpacity)
-  const scrollOffset = useAppSelector(selectScrollOffset)
+  const opacity = appConfig.brightness
+  const scrollOffset = appConfig.linePosition
   const horizontallyFlipped = useAppSelector(selectHorizontallyFlipped)
   const verticallyFlipped = useAppSelector(selectVerticallyFlipped)
   const rawText = useAppSelector(selectRawText)

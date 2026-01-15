@@ -72,32 +72,6 @@ export const NavBar = () => {
                   }
                 />
               </div>
-              <div className="navbar-item slider">
-                <span>Brightness:</span>
-                <input
-                  type="range"
-                  step="10"
-                  min="0"
-                  max="100"
-                  value={opacity}
-                  onChange={e =>
-                    dispatch(setOpacity(parseInt(e.currentTarget.value, 10)))
-                  }
-                />
-              </div>
-              <div className="navbar-item slider">
-                <span>Line position:</span>
-                <input
-                  type="range"
-                  step="10"
-                  min="10"
-                  max="200"
-                  value={scrollOffset}
-                  onChange={e =>
-                    dispatch(setScrollOffset(parseInt(e.currentTarget.value, 10)))
-                  }
-                />
-              </div>
             </>
           ) : null}
 
