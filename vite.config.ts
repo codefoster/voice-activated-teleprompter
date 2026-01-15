@@ -7,6 +7,13 @@ export default defineConfig({
   server: {
     open: true,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ['import', 'global-builtin', 'color-functions'],
+      },
+    },
+  },
   resolve: {
     alias: {
       bulma: resolve(__dirname, "node_modules/bulma/bulma.sass"),
