@@ -11,6 +11,8 @@ import {
   selectFontSize,
   selectMargin,
   toggleEdit,
+  flipHorizontally,
+  flipVertically,
 } from "../navbar/navbarSlice"
 
 import {
@@ -107,6 +109,12 @@ export const Content = () => {
           event.preventDefault();
           dispatch(setFinalTranscriptIndex(Math.min(maxIndex, finalTranscriptIndex + 5)));
           dispatch(setInterimTranscriptIndex(Math.min(maxIndex, interimTranscriptIndex + 5)));
+        } else if (event.code === "KeyH") {
+          event.preventDefault();
+          dispatch(flipHorizontally());
+        } else if (event.code === "KeyV") {
+          event.preventDefault();
+          dispatch(flipVertically());
         }
       }
     };
