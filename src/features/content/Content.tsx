@@ -20,6 +20,7 @@ import {
   selectTextElements,
   selectFinalTranscriptIndex,
   selectInterimTranscriptIndex,
+  resetTranscriptionIndices,
 } from "./contentSlice"
 
 import { startTeleprompter, stopTeleprompter } from "../../app/thunks"
@@ -115,6 +116,9 @@ export const Content = () => {
         } else if (event.code === "KeyV") {
           event.preventDefault();
           dispatch(flipVertically());
+        } else if (event.code === "KeyR") {
+          event.preventDefault();
+          dispatch(resetTranscriptionIndices());
         }
       }
     };
