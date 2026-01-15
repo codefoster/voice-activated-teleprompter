@@ -23,12 +23,21 @@ body {
 .navbar {
   flex-shrink: 0;
   border-bottom: 1px solid $grey-darker;
+  display: flex !important;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .navbar-menu {
   flex: 1;
-  display: flex;
+  display: flex !important;
   align-items: center;
+  background-color: transparent !important;
 }
 
 .navbar-end {
@@ -37,6 +46,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  display: flex !important;
 }
 
 .content-area {
