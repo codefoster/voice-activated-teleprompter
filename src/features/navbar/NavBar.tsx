@@ -46,35 +46,6 @@ export const NavBar = () => {
         <div className="navbar-end">
           {status === "stopped" ? (
             <>
-              <div className="navbar-item">
-                <div className="field">
-                  <div className="control">
-                    <div className="select is-small">
-                      <select
-                        value={language}
-                        onChange={e => {
-                          const newLanguage = e.currentTarget.value
-                          dispatch(setLanguage(newLanguage))
-                          dispatch(changeLanguage(newLanguage))
-                        }}
-                        title="Select Language"
-                      >
-                        {Object.keys(SUPPORTED_LOCALES).map(locale => {
-                          const label =
-                            SUPPORTED_LOCALES[
-                              locale as keyof typeof SUPPORTED_LOCALES
-                            ]
-                          return (
-                            <option key={locale} value={locale}>
-                              {label}
-                            </option>
-                          )
-                        })}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div className="navbar-item slider">
                 <span>Font size:</span>
                 <input
