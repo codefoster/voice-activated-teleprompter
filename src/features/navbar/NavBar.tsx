@@ -42,27 +42,6 @@ export const NavBar = () => {
       role="navigation"
       aria-label="main navigation"
     >
-      <div className="navbar-brand">
-        <div className="navbar-item">
-          <div className="title has-text-grey">
-            <div>Voice-Activated Teleprompter</div>
-            <ul className="is-size-7">
-              <li className="first has-text-white">
-                &copy; Julien Lecomte (2024)
-              </li>
-              <li className="has-text-warning">
-                <i className="fa-solid fa-triangle-exclamation"></i> Only works
-                in Chrome
-              </li>
-              <li className="last">
-                <a href="https://www.paypal.com/donate/?hosted_button_id=49UXY8F6VVYFA">
-                  Support this project
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div className="navbar-menu is-active">
         <div className="navbar-end">
           {status === "stopped" ? (
