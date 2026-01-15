@@ -11,6 +11,7 @@ import {
   selectMargin,
   selectOpacity,
   selectScrollOffset,
+  toggleEdit,
 } from "../navbar/navbarSlice"
 
 import {
@@ -61,6 +62,22 @@ export const Content = () => {
       }
     }
     const handleKeyPress = (event: KeyboardEvent) => {
+      // F2 toggles edit mode from any state (even when textarea is focused)
+      if (event.code === "F2") {
+        event.preventDefault();
+        if (status === "started") {
+          dispatch(stopTeleprompter());
+        }
+        dispatch(toggleEdit());
+        return;
+      }
+
+      // Don't handle other shortcuts if a textarea or input has focus
+      const target = event.target as HTMLElement;
+      if (target.tagName === "TEXTAREA" || target.tagName === "INPUT") {
+        return;
+      }
+
       // Only capture keyboard shortcuts when presenting
       if (status === "started" || status === "stopped") {
         const maxIndex = textElements.length - 1;
@@ -100,7 +117,7 @@ export const Content = () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
 
-  }, [interimTranscriptIndex, finalTranscriptIndex, scrollOffset])
+  }, [status, interimTranscriptIndex, finalTranscriptIndex, scrollOffset, dispatch])
 
   useLayoutEffect(() => {
     if (!containerRef.current || !bottomSpacerRef.current) {
