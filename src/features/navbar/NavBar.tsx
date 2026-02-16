@@ -81,7 +81,7 @@ export const NavBar = () => {
                 <button
                   className={`button ${status === "editing" ? "editing" : ""}`}
                   onClick={() => dispatch(toggleEdit())}
-                  title="Edit"
+                  title="Edit (F2)"
                 >
                   <span className="icon is-small">
                     <i className="fa-solid fa-pencil" />
@@ -91,7 +91,7 @@ export const NavBar = () => {
                   className={`button ${horizontallyFlipped ? "horizontally-flipped" : ""}`}
                   disabled={status !== "stopped"}
                   onClick={() => dispatch(flipHorizontally())}
-                  title="Flip Text Horizontally"
+                  title="Flip Text Horizontally (H)"
                 >
                   <span className="icon is-small">
                     <i className="fa-solid fa-left-right" />
@@ -101,7 +101,7 @@ export const NavBar = () => {
                   className={`button ${verticallyFlipped ? "vertically-flipped" : ""}`}
                   disabled={status !== "stopped"}
                   onClick={() => dispatch(flipVertically())}
-                  title="Flip Text Vertically"
+                  title="Flip Text Vertically (V)"
                 >
                   <span className="icon is-small">
                     <i className="fa-solid fa-up-down" />
@@ -111,7 +111,7 @@ export const NavBar = () => {
                   className="button"
                   disabled={status !== "stopped"}
                   onClick={() => dispatch(resetTranscriptionIndices())}
-                  title="Restart from the beginning"
+                  title="Restart from the beginning (R)"
                 >
                   <span className="icon is-small">
                     <i className="fa-solid fa-arrows-rotate" />
@@ -129,7 +129,7 @@ export const NavBar = () => {
                 )
               }
               title={
-                status === "stopped" || status === "editing" ? "Start" : "Stop"
+                status === "stopped" || status === "editing" ? "Start (Space)" : "Stop (Space/Esc)"
               }
             >
               <span className="icon is-small">
